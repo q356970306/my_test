@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>运营商测试</title>
+    <script type="text/javascript" src="../../static/js/newmobileV2.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>渠道:</label>
+            <select id="project_select">
+               <!-- <option value="buildnewgateWayUAT">新网关UAT环境  </option>
+                <option value="buildnewgateWaySC">生产新网关  </option>
+                <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+                <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+                <option value="buildnewgateWay">测试新网关  </option>
+                <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+                <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+                <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+                <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+                <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+                <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>-->
+
+                <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+                <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+                <option value="buildnewgateWayUAT_8013936086">新网关UAT环境_ 8013936086 </option>
+                <!--<option value="buildnewgateWaySC">生产新网关  </option>-->
+                <option value="GateWay_new_SC_1107602">新气象（生产5.0）1107602(不走缓存)  </option>
+                <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+                <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+                <!--  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+                  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+                  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+                  <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+
+                <!--<option value="buildnewgateWaySCA">生产新网关A环境 </option>-->
+                <option value="GateWay_new_SCA_1107602">新气象（生产5.0）A环境1107602  </option>
+                <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+                <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+                <!--<option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+                <option value="GateWay_new_SCB_1107602">新气象（生产5.0）B环境 1107602 </option>
+                <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+                <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+                    <option value="buildnewgateWay">测试新网关  </option>
+                <option value="buildnewgateWayB">测试新网关-b环境</option>
+                <option value="testPrivate8013936097">testPrivate8013936097</option>
+            </select>
+
+            &nbsp;&nbsp;
+            <select id="channel">
+                <option value="">走默认渠道 </option>
+                <option value="1">网厅</option>
+                <option value="2">商城</option>
+                <option value="3">通用app</option>
+                <option value="4">私有app</option>
+                <option value="5">wap</option>
+                <option value="6">通用wap</option>
+                <option value="7">app10086</option>
+            </select>
+            &nbsp;&nbsp;
+            <input value="批量跑电信" name="submit" class="submit" type="submit" onclick='login("dx")'>
+            &nbsp;&nbsp;
+            <input value="批量跑移动" name="submit" class="submit" type="submit" onclick='login("yd")'>
+            &nbsp;&nbsp;
+            <input value="批量跑部分运营商" name="submit" class="submit" type="submit" onclick='login("part")'>
+            &nbsp;&nbsp;
+            <input value="批量跑全部运营商" name="submit" class="submit" type="submit" onclick='login("all")'>
+            <label>dataNotifyUrl：</label>
+            <input name="dataNotifyUrl" value="" id="dataNotifyUrl" type="text">
+            <label>reportNotifyUrl：</label>
+            <input name="reportNotifyUrl" value="" id="reportNotifyUrl" type="text">
+            <br/>
+            <label style="color: red">输入参数(格式为：运营商名称|手机号|密码|真实姓名|身份证号  不同账号之间换行)：</label>
+            <br/>
+            <textarea name="mobileTest"  id="mobileTest" rows="5" cols="180"> </textarea><br/>
+
+            <input value="开始测试" name="submit" class="submit" type="submit" onclick='login("default")'>
+            &nbsp;&nbsp;  &nbsp;&nbsp;
+
+            <input value="当前批次任务查询" name="submit" class="submit" type="submit" onclick='getAllStatus()'>
+            <div id='resultSel'>
+            <label style="color: red">当前任务订单号:</label>
+            <br/>
+            <textarea name="tradeNo" id="tradeNo" rows="5" cols="180" ></textarea>
+            <br/>
+            <input id="msg" type="hidden">
+               <!-- <input value="任务查询" name="submit" class="submit" type="submit" onclick='getMoreStatus()'>
+                <br/>
+                <label style="color: red">任务订单号(多条订单号换行):</label>
+                <br/>
+                <textarea name="tradeNo1"  id="tradeNo1" rows="3" cols="180"> </textarea><br/>-->
+                <label style="color: red">任务当前状态:</label>
+                <br/>
+                <textarea name="resultData"  id="resultData" rows="8" cols="180"> </textarea><br/>
+                <br/>
+                <input value="当前批次任务查询" name="submit" class="submit" type="submit" onclick='getAllCheck()'>
+                <input value="校验爬取详情" name="submit" class="submit" type="submit" onclick='getDetail()'>
+                <br/>
+                <label style="color: red">任务校验结果:</label>
+
+                <br/>
+                <textarea name="resultDataCheck"  id="resultDataCheck" rows="8" cols="180"> </textarea><br/>
+                <label style="color: red">结果汇总:</label>
+                <br/>
+                <textarea name="collectresultData"  id="collectresultData" rows="8" cols="180"> </textarea><br/>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

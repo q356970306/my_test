@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>全知报告</title>
+    <script type="text/javascript" src="../../static/js/allknowreport.js"></script>
+</head>
+<body onload="setValue();">
+<div class="divClass">
+
+        <label>环境:</label>
+        &nbsp;&nbsp;
+        <select id="project_select" onchange="setValue()">
+            <!--  <option value="buildnewgateWayUAT">新网关UAT环境  </option>-->
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+            <option value="buildnewgateWayUAT_8000013112">新网关UAT环境_8000013112  </option>
+            <!--<option value="buildnewgateWaySC">生产新网关 （不走缓存） </option>-->
+            <option value="GateWay_new_SC_1107602">新气象（生产5.0）1107602  </option>
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+          <!--  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+
+            <!--<option value="buildnewgateWaySCA">生产新网关A环境 （不走缓存）</option>-->
+            <option value="GateWay_new_SCA_1107602">新气象（生产5.0）A环境1107602  </option>
+            <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+            <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+            <!--<option value="buildnewgateWaySCB">生产新网关B环境 （不走缓存） </option>-->
+            <option value="GateWay_new_SCB_1107602">新气象（生产5.0）B环境1107602   </option>
+            <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+            <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+            <option value="buildnewgateWayA">测试新网关-a环境  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+        </select>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+
+
+
+        &nbsp;
+        <label>商户订单号（必填）：</label>
+        <input name="taskId" value="" id="taskId" type="text">
+        <label>终端号（必填）：</label>
+        <input name="terminalId" value="" id="terminalId" type="text">
+        <br/>
+        <label>真实姓名（非必填）:</label>
+        <input name="realName"  id="realName" type="text" size="10">
+        <label>身份证号码（非必填）:</label>
+        <input name="idCard" id="idCard" type="text">
+    <br/>
+        <label>运营商授权订单号（必填）:</label>
+        <input name="carrierToken"  id="carrierToken" type="text" size="20">
+        <label>设备指纹订单号（非必填）:</label>
+        <input name="deviceToken" id="deviceToken" type="text" size="20">
+
+    <label>是否需要先知分（非必填，1为需要）</label>
+    <input name="xz_score" id="xz_score" type="text" size="20">
+
+
+        <input value="查询" name="submit" class="submit" type="submit" onclick='login()'>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+    <h5>
+        <a style="color: orangered" href="https://docs.xinyan.com/docs/qz_report?token=GRtkrz9QBY7k" target="_blank">全知报告接口文档地址</a>
+    </h5>
+    <br/>
+    <div>
+        <br/>
+        <label>全知报告查询结果:</label>
+        <br/>
+        <textarea name="resultReport"  id="resultReport" rows="20" cols="200"> </textarea><br/>
+
+    </div>
+</div>
+
+</body>
+</html>

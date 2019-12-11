@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>学信网</title>
+    <script type="text/javascript" src="../../static/js/chsi.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>用户名:</label>
+            <input name="loginId"  id="loginId" type="text">
+            <label>密码:</label>
+            <input name="loginPwd" id="loginPwd" type="password">
+            <label>渠道:</label>
+            <select id="project_select">
+                <option value="GateWay_UAT13112">征信网关5.0 UAT环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_UAT12593">征信网关5.0 UAT环境(自有新渠道商户) - 8000012593</option>
+                <option value="GateWay_5">征信网关5.0生产环境 - 1010544</option>
+                <option value="GateWay_Private_5">征信网关5.0生产环境(自有新渠道商户) - 1107602</option>
+                <option value="GateWay_Private_32911">征信网关5.0生产环境(自有渠道商户) - 1107601</option>
+                <option value="GateWay_Test_Private_5">征信网关5.0测试环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_Test_5">征信网关5.0测试环境 - 8013659631</option>
+                <option value="GateWay_Test_Private_12593">征信网关5.0测试环境(自有新渠道商户) - 8000012593</option>
+            </select>
+            <label>接入方式:</label>
+            <select id="access_mode">
+                <option value="api">api(加密)</option>
+                <option value="web">web(免密)</option>
+            </select>
+            <input value="登录" name="submit" class="submit" type="submit" onclick='login()'>
+            <label>验证码:</label>
+            <img id="img_code" src=""  >
+            <input name="i_img_code"  id="i_img_code" type="text">
+            <input value="获取图片验证码" name="submit" class="submit" type="submit" onclick='getImgCode()'>
+            <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+        </div>
+        <br/>
+        <div id='resultSel'>
+            <label>订单号:</label>
+            <input name="tradeNo" id="tradeNo" type="text">
+            <label>任务id:</label>
+            <input name="taskId"  id="taskId" type="text">
+            <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+            <label>任务当前状态:</label>
+            <br/>
+            <textarea name="resultData"  id="resultData" rows="10" cols="200"> </textarea><br/>
+            <input id="msg" type="hidden">
+        </div>
+        <br/>
+        <div>
+            <input value="模拟通知" name="submit" class="submit" type="submit" onclick='notify()'> &nbsp;&nbsp;&nbsp;
+            <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='query()'>
+        </div>
+    </div>
+</body>
+</html>

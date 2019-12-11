@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>学信网</title>
+    <script type="text/javascript" src="../../static/js/newchsi.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>用户名:</label>
+            <input name="loginId"  id="loginId" type="text">
+            <label>密码:</label>
+            <input name="loginPwd" id="loginPwd" type="password">
+            <label>渠道:</label>
+            <select id="project_select">
+                <option value="buildnewgateWayUAT">新网关UAT环境  </option>
+                <option value="buildnewgateWaySC">生产新网关  </option>
+                <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+                <option value="buildnewgateWay">测试新网关  </option>
+            </select>
+            <label>接入方式:</label>
+            <select id="access_mode">
+                <option value="api">api(加密)</option>
+                <option value="web">web(免密)</option>
+            </select>
+            <input value="登录" name="submit" class="submit" type="submit" onclick='login()'>
+            <label>验证码:</label>
+            <img id="img_code" src=""  >
+            <input name="i_img_code"  id="i_img_code" type="text">
+            <input value="获取图片验证码" name="submit" class="submit" type="submit" onclick='getImgCode()'>
+            <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+        </div>
+        <br/>
+        <div id='resultSel'>
+            <label>订单号:</label>
+            <input name="tradeNo" id="tradeNo" type="text">
+            <label>任务id:</label>
+            <input name="taskId"  id="taskId" type="text">
+            <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+            <label>任务当前状态:</label>
+            <br/>
+            <textarea name="resultData"  id="resultData" rows="10" cols="200"> </textarea><br/>
+            <input id="msg" type="hidden">
+        </div>
+        <br/>
+        <div>
+            <input value="模拟通知" name="submit" class="submit" type="submit" onclick='notify()'> &nbsp;&nbsp;&nbsp;
+            <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='query()'>
+        </div>
+    </div>
+</body>
+</html>

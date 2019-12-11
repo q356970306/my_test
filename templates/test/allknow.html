@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>全知信用报告</title>
+    <script type="text/javascript" src="../../static/js/allknow.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>渠道:</label>
+            <select id="project_select">
+                <option value="GateWay_UAT13112">征信网关5.0 UAT环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_UAT12593">征信网关5.0 UAT环境(自有新渠道商户) - 8000012593</option>
+                <option value="GateWay_5">征信网关5.0生产环境 - 1010544</option>
+                <option value="GateWay_Private_5">征信网关5.0生产环境(自有新渠道商户) - 1107602</option>
+                <option value="GateWay_Private_32911">征信网关5.0生产环境(自有渠道商户) - 1107601</option>
+                <option value="GateWay_Test_Private_5">征信网关5.0测试环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_Test_5">征信网关5.0测试环境 - 8013659631</option>
+                <option value="GateWay_Test_Private_12593">征信网关5.0测试环境(自有新渠道商户) - 8000012593</option>
+            </select>
+            <label>关联订单号:</label>
+            <input name="relaTradeNo"  id="relaTradeNo" type="text">
+            <label>身份证号:</label>
+            <input name="idCard" id="idCard" type="text">
+            <label>真实姓名:</label>
+            <input name="realName"  id="realName" type="text">
+            <label>第一联系人手机号:</label>
+            <input name="firstContactsMobile" id="firstContactsMobile" type="text">
+            <label>第二联系人手机号:</label>
+            <input name="secondContactsMobile" id="secondContactsMobile" type="text">
+
+            <label>接入方式:</label>
+            <select id="access_mode">
+                <option value="api">api(加密)</option>
+                <option value="web">web(免密)</option>
+            </select>
+            <input value="查询" name="submit" class="submit" type="submit" onclick='login()'>
+        </div>
+        <br/>
+        <div id='resultSel'>
+            <label>查询结果:</label>
+            <textarea name="resultData"  id="resultData" rows="100" cols="200"> </textarea>
+        </div>
+        <br/>
+
+    </div>
+</body>
+</html>

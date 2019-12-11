@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>运营商测试</title>
+    <script type="text/javascript" src="../../static/js/mobile.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>渠道:</label>
+            <select id="project_select">
+                <option value="GateWay_UAT13112">征信网关5.0 UAT环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_UAT12593">征信网关5.0 UAT环境(自有新渠道商户) - 8000012593</option>
+                <option value="GateWay_5">征信网关5.0生产环境 - 1010544</option>
+                <option value="GateWay_Private_5">征信网关5.0生产环境(自有新渠道商户) - 1107602</option>
+                <option value="GateWay_Private_32911">征信网关5.0生产环境(自有渠道商户) - 1107601</option>
+                <option value="GateWay_Test_Private_5">征信网关5.0测试环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_Test_5">征信网关5.0测试环境 - 8013659631</option>
+                <option value="GateWay_Test_Private_12593">征信网关5.0测试环境(自有新渠道商户) - 8000012593</option>
+            </select>
+            &nbsp;&nbsp;
+
+            <input value="批量跑电信" name="submit" class="submit" type="submit" onclick='login("dx")'>
+            &nbsp;&nbsp;
+            <input value="批量跑移动" name="submit" class="submit" type="submit" onclick='login("yd")'>
+            &nbsp;&nbsp;
+            <input value="批量跑全部运营商" name="submit" class="submit" type="submit" onclick='login("all")'>
+            <br/>
+            <label style="color: red">输入参数(格式为：运营商名称|手机号|密码|真实姓名|身份证号  不同账号之间换行)：</label>
+            <br/>
+            <textarea name="mobileTest"  id="mobileTest" rows="5" cols="180"> </textarea><br/>
+
+            <input value="开始测试" name="submit" class="submit" type="submit" onclick='login("default")'>
+            &nbsp;&nbsp;  &nbsp;&nbsp;
+
+            <input value="当前批次任务查询" name="submit" class="submit" type="submit" onclick='getAllStatus()'>
+            <div id='resultSel'>
+            <label style="color: red">当前任务订单号:</label>
+            <br/>
+            <textarea name="tradeNo" id="tradeNo" rows="5" cols="180" ></textarea>
+            <br/>
+            <input id="msg" type="hidden">
+               <!-- <input value="任务查询" name="submit" class="submit" type="submit" onclick='getMoreStatus()'>
+                <br/>
+                <label style="color: red">任务订单号(多条订单号换行):</label>
+                <br/>
+                <textarea name="tradeNo1"  id="tradeNo1" rows="3" cols="180"> </textarea><br/>-->
+                <label style="color: red">任务当前状态:</label>
+                <br/>
+                <textarea name="resultData"  id="resultData" rows="8" cols="180"> </textarea><br/>
+
+
+        </div>
+        </div>
+    </div>
+</body>
+</html>

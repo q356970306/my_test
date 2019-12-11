@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>防撸服务查询</title>
+    <script type="text/javascript" src="../../static/js/prevent_steal.js"></script>
+</head>
+<body>
+<div class="divClass">
+    <div>
+        <label>环境:</label>
+        <select id="project_select" onchange="gateWayChange()">
+            <!--  <option value="buildnewgateWayUAT">新网关UAT环境  </option>-->
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+            <option value="buildnewgateWaySC">生产新网关  </option>
+
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+
+
+            <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+            <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+            <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+            <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+            <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+            <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+            <option value="buildnewgateWayA">测试新网关-a环境  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+        </select>
+        <label>siteName:</label>
+        <input name="siteName" value="" id="siteName" type="text">
+        <label>userIp:</label>
+        <input name="userIp" value="" id="userIp" type="text">
+
+        <input value="查询" name="submit" class="submit" type="submit" onclick='check()'>
+    </div>
+    <br/>
+    <div id='resultSel'>
+        <label>查询结果:</label>
+    </div>
+    <div>
+        <textarea name="resultData"  id="resultData" rows="100" cols="200"> </textarea>
+    </div>
+    <br/>
+
+</div>
+</body>
+</html>

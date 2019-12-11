@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>信用卡申请进度查询</title>
+    <script type="text/javascript" src="../../static/js/creditCardProgress.js"></script>
+</head>
+<body onload="queryCreditBankList()">
+<div class="divClass">
+    <div>
+        <label>银行名称：</label>
+        <select id="select_bank" onchange="changeBank()">
+            <option value="">请选择银行</option>
+        </select>
+        <!--<input value="加载银行信息" name="submit" class="submit" type="submit" onclick='queryCreditBankList()'>-->
+        <!--<input name="inputName"  id="inputName" type="text">-->
+        <!--<input value="银行快速查询" name="submit" class="submit" type="submit" onclick='queryBank()'>-->
+        <!--<input value="加载地市和登录信息" name="submit" class="submit" type="submit" onclick='queryFundLogin()'>-->
+        <input value="获取银行登陆方式" name="submit" class="submit" type="submit" onclick='queryhelp()'>
+
+        <select id="select_login" onchange="checkLoginType()">
+            <option value="">请选择登录方式</option>
+        </select>
+
+        <label>渠道:</label>
+        <select id="project_select">
+            <!--  <option value="buildnewgateWayUAT">新网关UAT环境  </option>-->
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+            <option value="buildnewgateWaySC">生产新网关  </option>
+
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+            <!--  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+              <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+              <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+              <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+
+            <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+            <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+            <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+            <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+            <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+            <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+            <option value="buildnewgateWay">测试新网关  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+        </select>
+        <!--<label>接入方式:</label>-->
+        <!--<select id="access_mode">-->
+            <!--<option value="api">api(加密)</option>-->
+            <!--<option value="web">web(免密)</option>-->
+        <!--</select>-->
+        <!--<br/>-->
+        <!--<select id="select_addr" hidden="hidden">-->
+            <!--<option value="">请选择地市</option>-->
+        <!--</select>-->
+        <br/>
+        <label>姓名:</label>
+        <input name="realName"  id="realName" type="text">
+        <label>身份证号:</label>
+        <input name="idCard"  id="idCard" type="text" >
+        <label>手机号:</label>
+        <input name="mobile"  id="mobile" type="text">
+        <input value="创建任务" name="submit" class="submit" type="submit" onclick='login()'>
+        <br/>
+        <br/>
+        <label>验证码:</label>
+        <img id="img_code" src=""  >
+        <input name="i_img_code"  id="i_img_code" type="text">
+        <input value="获取验证码" name="submit" class="submit" type="submit" onclick='getMsg()'>&nbsp;&nbsp;
+        <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+        <br/>
+        <label>第一条短信</label>
+        <br/>
+        <input name="firsttime"  id="firsttime" type="text" size="20">
+        <input name="firstcontent"  id="firstcontent" type="text" size="150">
+        <br/>
+        <label>第二条短信</label>
+        <br/>
+        <input name="secondtime"  id="secondtime" type="text" size="20">
+        <input name="secondcontent"  id="secondcontent" type="text" size="150">
+
+
+
+        <br/>
+        <br/>
+
+        <label>token:</label>
+        <input name="taskId"  id="taskId" type="text" size="35">
+        <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'>&nbsp;&nbsp;&nbsp;
+        <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='getData()'>
+        <br/>
+        <textarea name="resultData"  id="resultData" rows="5" cols="200"> </textarea><br/>
+        <label>任务历史状态:</label>
+        <br/>
+        <textarea name="logStatus"  id="logStatus" rows="10" cols="200"> </textarea><br/>
+    </div>
+</div>
+</body>
+</html>

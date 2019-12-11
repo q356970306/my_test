@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>新网关运营商</title>
+    <script type="text/javascript" src="../../static/js/newCarrierV2.js"></script>
+</head>
+<body onload="newloadCarrier();">
+<div class="divClass">
+    <div>
+
+
+        <label>环境:</label>
+        &nbsp;&nbsp;
+        <select id="project_select">
+            <!--  <option value="buildnewgateWayUAT">新网关UAT环境  </option>-->
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+            <!--<option value="buildnewgateWayUAT_8000013112">新网关UAT环境_8000013112  </option>-->
+            <!--<option value="buildnewgateWaySC">生产新网关 （不走缓存） </option>-->
+            <option value="GateWay_new_SC_1107602">新气象（生产5.0）1107602（不走缓存）  </option>
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+          <!--  <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCA">生产新网关A环境  </option>
+            <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+
+            <!--<option value="buildnewgateWaySCA">生产新网关A环境 （不走缓存）</option>-->
+            <option value="GateWay_new_SCA_1107602">新气象（生产5.0）A环境1107602（不走缓存）  </option>
+            <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+            <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+            <!--<option value="buildnewgateWaySCB">生产新网关B环境 （不走缓存） </option>-->
+            <option value="GateWay_new_SCB_1107602">新气象（生产5.0）B环境1107602（不走缓存）  </option>
+            <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+            <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+            <option value="buildnewgateWayA">测试新网关-a环境  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+            <option value="testPrivate8013936097">testPrivate8013936097</option>
+        </select>
+        &nbsp;&nbsp;
+        <label>运营商:</label>
+        <input name="carrierName"  id="carrierName" type="text" onfocus="setfocus(this)" oninput="setinput(this)"size="10">
+{#        <input name="carrierName"  id="carrierName" type="text" size="10">#}
+        &nbsp;&nbsp;
+
+        <select id="carrier_select"  onchange="carrierChange()"></select>
+        <input name="datasource"  id="datasource" type="text" hidden="hidden">
+        <input name="LoginCode"  value="1217" id="LoginCode" type="text" hidden="hidden">
+
+
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <label>渠道:</label>
+       <!-- <input name="channel" id="channel" type="text" size="10">-->
+        <select id="channel">
+            <option value="">走默认渠道 </option>
+            <option value="1">网厅</option>
+            <option value="2">商城</option>
+            <option value="3">通用app</option>
+            <option value="4">私有app</option>
+            <option value="5">wap</option>
+            <option value="6">通用wap</option>
+            <option value="7">app10086</option>
+
+        </select>
+        &nbsp;&nbsp;
+        <label>dataNotifyUrl：</label>
+        <input name="dataNotifyUrl" value="" id="dataNotifyUrl" type="text">
+        <label>reportNotifyUrl：</label>
+        <input name="reportNotifyUrl" value="" id="reportNotifyUrl" type="text">
+        <label>terminalId：</label>
+        <input name="terminalId" value="" id="terminalId" type="text">
+        <br/>
+        <label>手机号:</label>
+        <input name="moblie"  id="moblie" type="text" size="10">
+        <label>密码:</label>
+        <input name="loginPwd" id="loginPwd" type="text" size="10">
+        <label>真实姓名:</label>
+        <input name="realName"  id="realName" type="text" size="10">
+        <label>身份证号码:</label>
+        <input name="idCard" id="idCard" type="text">
+
+        <input value="创建任务" name="submit" class="submit" type="submit" onclick='login()'>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <label  id="labesuprisepassword" hidden="hidden" >彩蛋秘钥:</label>
+        <input name="彩蛋秘钥"  id="suprisepassword"  type="password">
+        <input value="彩蛋" name="submit" class="submit" type="submit" onclick='Surprise()'>
+        <br/>
+        <label>验证码:</label>
+
+        <input name="i_img_code"  id="i_img_code" type="text">
+        <input name="i_img_code_hide"  id="i_img_code_hide" type="text" hidden="hidden">
+        <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+
+        <input value="刷新提交" name="submit" class="submit" type="submit" onclick='RefreshMsg()'>
+        <br/>
+        <br/>
+        <br/>
+        <label>获取验证码:</label>
+        <input value="获取验证码" name="submit" class="submit" type="submit" onclick='getMsg()'>
+        <br/>
+        <label>第一条短信</label>
+        <br/>
+        <input name="firsttime"  id="firsttime" type="text" size="20">
+        <input name="firstcontent"  id="firstcontent" type="text" size="150">
+        <br/>
+        <label>第二条短信</label>
+        <br/>
+        <input name="secondtime"  id="secondtime" type="text" size="20">
+        <input name="secondcontent"  id="secondcontent" type="text" size="150">
+
+    </div>
+    <br/>
+    <br/>
+    <div id='resultSel'>
+        <label>订单号:</label>
+        <input name="tradeNo" id="tradeNo" type="text"size="50">
+        <input name="LastCode"  value="" id="LastCode" type="text" hidden="hidden">
+        <input name="LastTime"  value="" id="LastTime" type="text" hidden="hidden">
+        <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+        <br/>
+        <br/>
+
+        <label>任务当前状态:</label>
+        <br/>
+        <textarea name="resultData"  id="resultData" rows="2" cols="200"> </textarea><br/>
+        <label>任务历史状态:</label>
+        <br/>
+        <textarea name="logStatus"  id="logStatus" rows="10" cols="200"> </textarea><br/>
+        <input id="msg" type="hidden">
+    </div>
+    <br/>
+    <div>
+        <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='getData()'>
+        &nbsp;&nbsp;
+
+        <label>报告版本号:</label>
+        <input name="version" id="version" type="text"size="5">
+        <input value="任务报告查询" name="submit" class="submit" type="submit" onclick='getReport()'>
+        &nbsp;&nbsp;
+        <input value="接口字段校验" name="submit" class="submit" type="submit" onclick='getCheckJson()'>
+        <br/>
+        <textarea name="resultReport"  id="resultReport" rows="20" cols="200"> </textarea><br/>
+
+        &nbsp;&nbsp;
+        <input value="校验结果" name="submit" class="submit" type="submit" onclick='getCheck()'>
+        <input value="校验报告" name="submit" class="submit" type="submit" onclick='getCheckReport()'>
+        <input value="校验结果和报告" name="submit" class="submit" type="submit" onclick='getCheckDataAndReport()'>
+        <input value="校验通知及记录表" name="submit" class="submit" type="submit" onclick='getCheckNotifyAndRecord()'>
+
+        <br/>
+        <label>校验结果</label> &nbsp;&nbsp;&nbsp;&nbsp;
+        <textarea name="resultfail"  id="resultfail" rows="5" cols="200"> </textarea><br/>
+        <br/>
+        <label>其他异常结果</label>
+        <textarea name="resultother"  id="resultother" rows="5" cols="200"> </textarea><br/>
+
+    </div>
+</div>
+</body>
+</html>

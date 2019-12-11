@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>企业征信</title>
+    <script type="text/javascript" src="../../static/js/enterprise.js"></script>
+</head>
+<body>
+<div class="divClass">
+    <div>
+        <label>企业名称:</label>
+        <input name="companyName"  id="companyName" type="text">
+        <label>类型:</label>
+        <select id="type">
+            <option value="0">企业名称</option>
+            <option value="1">统一社会信用代码</option>
+            <option value="2">注册号</option>
+            <option value="3">组织机构代码</option>
+        </select>
+        <label>案件号:</label>
+        <input name="orgNo" id="orgNo" type="text">
+        <label>获取记录数:</label>
+        <input name="records" id="records" type="text" >
+        <label>开始年份:</label>
+        <input name="startYear" id="startYear" type="text" >
+        <label>结束年份:</label>
+        <input name="endYear" id="endYear" type="text">
+        <label>查询条件:</label>
+        <input name="keyword" id="keyword" type="text">
+        <label>企业工商信息查询类型:</label>
+        <select id="taskSubType" onclick="">
+            <option value="QYGSXX_JCB">企业工商信息_基础版</option>
+            <option value="QYGSXX_SJB">企业工商信息_升级版</option>
+            <option value="QYSXBZXR">企业失信被执行人</option>
+            <option value="QYBZXR">企业被执行人</option>
+            <option value="FYGG">法院公告</option>
+            <option value="FYPJ">法院判决</option>
+            <option value="SWZDWF">税务重大违法</option>
+        </select>
+
+        <label>渠道:</label>
+        <select id="project_select">
+            <option value="GateWay_UAT13112">征信网关5.0 UAT环境(自有渠道商户) - 8000013112</option>
+            <option value="GateWay_UAT12593">征信网关5.0 UAT环境(自有新渠道商户) - 8000012593</option>
+            <option value="GateWay_5">征信网关5.0生产环境 - 1010544</option>
+            <option value="GateWay_Private_5">征信网关5.0生产环境(自有新渠道商户) - 1107602</option>
+            <option value="GateWay_Private_32911">征信网关5.0生产环境(自有渠道商户) - 1107601</option>
+            <option value="GateWay_Test_Private_5">征信网关5.0测试环境(自有渠道商户) - 8000013112</option>
+            <option value="GateWay_Test_5">征信网关5.0测试环境 - 8013659631</option>
+            <option value="GateWay_Test_Private_12593">征信网关5.0测试环境(自有新渠道商户) - 8000012593</option>
+        </select>
+        <input value="任务创建" name="submit" class="submit" type="submit" onclick='login()'>
+    </div>
+    <div>
+        <label>订单号:</label>
+        <input name="tradeNo"  id="tradeNo" type="text">
+        <label>任务id:</label>
+        <input name="taskId"  id="taskId" type="text">
+        <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+        <label>任务当前状态:</label> <br/>
+        <textarea name="resultData"  id="resultData" rows="10" cols="200"> </textarea><br/>
+    </div>
+    <br/>
+
+    <div>
+        <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='query()'><br/>
+        <label>任务结果:</label> <br/>
+        <textarea name="allData"  id="allData" rows="10" cols="200"> </textarea><br/>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>qa_manage</title>
+    <script type="text/javascript" src="../../static/js/qa_manage.js"></script>
+</head>
+<body>
+<div id="main"  style="width:100%;">
+    <div id ="left" style="width:40%;float:left;">
+        <br/>
+        <label><b>录入人员：</b></label>
+        <input name="man" id="man" type="text" size="15">
+        &nbsp;&nbsp;&nbsp;
+        <input value="查询工单名称" name="submit5" class="submit" type="submit" onclick='showMission()'>
+
+        <br/>
+        <label><b>工单名称：</b></label>
+        <input name="itemName" id="itemName" type="text" size="20">
+        &nbsp;&nbsp;&nbsp;
+        <select id ="bugTeam">
+            <option value ="none">请选择缺陷所属小组</option>
+            <option value ="crawler">授权</option>
+            <option value="parser">创新</option>
+            <option value="gateway">网关</option>
+        </select>
+
+        <input value="提交缺陷" name="submit1" class="submit" type="submit" onclick='insert()'>
+
+        <br/>
+        <label><b>缺陷详情：</b></label>
+        <h6 style='color:red;display:inline-block'>>>>>>注：换行即为多个缺陷，请在一行内填写单个缺陷！</h6>
+        <textarea name="bugDetail"  id="bugDetail" rows="50" cols="100"> </textarea>
+        <br/>
+
+    </div>
+    <div id ="right" style="width:60%;float:left;">
+        <br/>
+        <label><b>工单名称：</b></label>
+        <input name="selectItemName" id="selectItemName" type="text" size="20">
+        &nbsp;&nbsp;
+        <select id ="selectBugTeam">
+            <option value ="none">请选择缺陷所属小组</option>
+            <option value ="crawler">授权</option>
+            <option value="parser">创新</option>
+            <option value="gateway">网关</option>
+        </select>
+        &nbsp;&nbsp;
+        <input value="查看工单缺陷" name="submit3" class="submit" type="submit" onclick='show()'>
+
+        <br/>
+        <label><b>缺陷列表：</b></label>
+        &nbsp;&nbsp;&nbsp;
+        <input value="已修复" name="submit2" class="submit" type="submit" onclick='fixed()'>
+        &nbsp;&nbsp;&nbsp;
+        <input value="已验证" name="submit4" class="submit" type="submit" onclick='closed()'>
+
+        <br/>
+        <input  id="all" type="checkbox" name="yon" onclick="chk()"/>&nbsp;&nbsp;全选
+        <div id ="detail">
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

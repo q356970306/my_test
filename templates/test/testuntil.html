@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>在线加密解密</title>
+    <script type="text/javascript" src="../../static/js/testuntil.js"></script>
+</head>
+<body>
+<div class="divClass">
+    <div>
+        <label>渠道:</label>
+        <select id="type_select" >
+            <option value="3DES">3DES加解密 </option>
+            <option value="SM4">SM4加解密 </option>
+        </select>
+        <br/>
+        请输入待加密或解密字符串
+        <br/>
+
+        <textarea name="batchFund"  id="batchFund" rows="5" cols="260"></textarea><br/>
+
+
+        <input value="加密" name="submit" class="submit" type="submit" onclick='login("default")'>
+        &nbsp;&nbsp;  &nbsp;&nbsp;
+
+        <input value="解密" name="submit" class="submit" type="submit" onclick='decrycode()'>
+        <div id='resultSel'>
+            <label style="color: red">加密或解密后的结果为;</label>
+            <br/>
+            <textarea name="tradeNo" id="tradeNo" rows="5" cols="260" ></textarea>
+            <br/>
+            <input id="msg" type="hidden">
+            <!-- <input value="任务查询" name="submit" class="submit" type="submit" onclick='getMoreStatus()'>
+             <br/>
+             <label style="color: red">任务订单号(多条订单号换行):</label>
+             <br/>
+             <textarea name="tradeNo1"  id="tradeNo1" rows="3" cols="180"> </textarea><br/>-->
+
+            <br/>
+
+            <!-- <br/>
+             <input value="公积金查询" name="submit" class="submit" type="submit" onclick='queryFund("yd")'>
+             <input value="公积金缴纳查询" name="submit" class="submit" type="submit" onclick='queryFundBills("yd")'>
+             <input value="公积金账号查询" name="submit" class="submit" type="submit" onclick='queryFundUser("yd")'>
+             <input value="公积金贷款查询" name="submit" class="submit" type="submit" onclick='queryFundLoan("yd")'>
+             <input value="公积金还款查询" name="submit" class="submit" type="submit" onclick='queryFundRepay("yd")'>
+             <br/>
+             <textarea name="resultData"  id="reportData" rows="8" cols="180"> </textarea><br/>
+
+             <input value="公积金查询" name="submit" class="submit" type="submit" onclick='queryFund()'><br/>
+             <textarea name="resultData"  id="resultData" rows="5" cols="200"> </textarea><br/>
+             <input value="公积金缴纳查询" name="submit" class="submit" type="submit" onclick='queryFundBills()'><br/>
+             <textarea name="billsData"  id="billsData" rows="5" cols="200"> </textarea><br/>
+             <input value="公积金账号查询" name="submit" class="submit" type="submit" onclick='queryFundUser()'><br/>
+             <textarea name="userData"  id="userData" rows="5" cols="200"> </textarea><br/>
+             <input value="公积金贷款查询" name="submit" class="submit" type="submit" onclick='queryFundLoan()'><br/>
+             <textarea name="loanData"  id="loanData" rows="5" cols="200"> </textarea><br/>
+             <input value="公积金还款查询" name="submit" class="submit" type="submit" onclick='queryFundRepay()'><br/>
+             <textarea name="repayData"  id="repayData" rows="5" cols="200"> </textarea><br/>-->
+        </div>
+        <br/>
+        <div>
+            <label>MD5加密:</label>
+            <label>待加密字符串:</label>
+            <input name="tmpsrting" id="tmpsrting" type="text">
+            &nbsp;&nbsp;
+            <input value="加密" name="submit" class="submit" type="submit" onclick='md5();'>
+            <br/>
+            <textarea name="repayData"  id="repayData" rows="1" cols="50"> </textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>

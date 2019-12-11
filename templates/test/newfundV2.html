@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>新网关公积金查询</title>
+    <script type="text/javascript" src="../../static/js/newfundV2.js"></script>
+</head>
+<body onload="queryFundList()">
+<div class="divClass">
+    <div>
+        <label>渠道:</label>
+        <select id="project_select"onchange="changeHost()">
+              <option value="buildnewgateWayUAT">新网关UAT环境  </option>
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+            <!--<option value="buildnewgateWaySC">生产新网关  </option>-->
+
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+
+
+            <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+            <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+            <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+            <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+            <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+            <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+            <option value="buildnewgateWayA">测试新网关-a环境  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+            <option value="testPrivate8013936097">testPrivate8013936097</option>
+        </select>
+        <label>公积金地区：</label>
+        &nbsp;&nbsp;
+
+        <input name="fundName"  id="fundName" type="text" onfocus="setfocus(this)" oninput="setinput(this)"size="10">
+
+        &nbsp;&nbsp;
+        <select id="select_fund_city" onchange="changeFundCode()">
+            <option value="">请选择地区</option>
+        </select>
+
+
+
+        <select id="select_login" onchange="checkLoginType()">
+            <option value="">请选择登录方式</option>
+        </select>
+        <input value="创建任务" name="submit" class="submit" type="submit" onclick='login()'>
+
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <a id="urlid" href="#"  target="_blank"onclick="getUrl();return false">前往官网</a>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <label  id="labesuprisepassword" hidden="hidden" >彩蛋秘钥:</label>
+        <input name="彩蛋秘钥"  id="suprisepassword"  type="text">
+        <input value="彩蛋" name="submit" class="submit" type="submit" onclick='Surprise()'>
+        <br/>
+
+
+        <label  id="labelrealname" hidden="hidden" >姓名:</label>
+        <input name="realName"  id="realName"  hidden="hidden" type="text">
+
+        <label  id="labelidCard" hidden="hidden" >身份证号:</label>
+        <input name="idCard"  id="idCard" type="text"  hidden="hidden" >
+
+        <label id="labelaccount" hidden="hidden" >个人账号:</label>
+        <input name="account"  id="account" type="text" hidden="hidden" >
+        <label id="labelcorpaccount" hidden="hidden" >单位账号:</label>
+        <input name="corpaccount"  id="corpaccount" type="text" hidden="hidden" >
+        <label id="labelpassword" hidden="hidden" >密码:</label>
+        <input name="password"  id="password" type="text" hidden="hidden" >
+        <label id="labelphone" hidden="hidden" >手机号:</label>
+        <input name="phone"  id="phone" type="text" hidden="hidden" >
+        <label id="area" hidden="hidden" >地区:</label>
+        <select id="select_area" hidden="hidden">
+            <option value="">请选择地市</option>
+        </select>
+
+
+
+        <br/>
+        <br/>
+        <label>验证码:</label>
+        <img id="img_code" src=""  >
+        <input name="i_img_code"  id="i_img_code" type="text">
+
+        <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+
+        <br/>
+
+        <label>token:</label>
+        <input name="taskId"  id="taskId" type="text" size="35">
+        <input name="LastCode"  value="" id="LastCode" type="text" hidden="hidden">
+        <input name="LastTime"  value="" id="LastTime" type="text" hidden="hidden">
+        <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'>&nbsp;&nbsp;&nbsp;
+        <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='getData()'>
+        <input value="查询登陆方式" name="submit" class="submit" type="submit" onclick='getlogintype()'>
+        <input value="校验结果" name="submit" class="submit" type="submit" onclick='getCheck()'>
+        <br/>
+        <textarea name="resultData"  id="resultData" rows="30" cols="200"> </textarea><br/>
+        <label>任务历史状态:</label>
+        <br/>
+        <textarea name="logStatus"  id="logStatus" rows="10" cols="200"> </textarea><br/>
+        <br/>
+
+        <br/>
+        <!textarea name="resultReport"  id="resultReport" rows="20" cols="200"> <!/textarea><br/>
+
+
+
+        <br/>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>车险新网关</title>
+    <script type="text/javascript" src="../../static/js/autoininsurance.js"></script>
+</head>
+<body onload="newloadApi()">
+<div class="divClass">
+    <div>
+
+        <label>环境:</label>
+        <select id="project_select" onchange="gateWayChange()">
+          <!--  <option value="buildnewgateWayUAT">新网关UAT环境  </option>-->
+            <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+            <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+
+
+
+
+           <!-- <option value="buildnewgateWaySC">生产新网关  </option>-->
+            <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+            <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+            <!-- <option value="buildnewgateWaySCA">生产新网关A环境 </option>-->
+             <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+             <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+         <!--    <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+             <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+             <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+
+             <option value="buildnewgateWay">测试新网关  </option>
+            <option value="buildnewgateWayB">测试新网关-b环境</option>
+
+         </select>
+        <label>dataNotifyUrl：</label>
+        <input name="dataNotifyUrl" value="" id="dataNotifyUrl" type="text">
+        <label>reportNotifyUrl：</label>
+        <input name="reportNotifyUrl" value="" id="reportNotifyUrl" type="text">
+        <!--
+         <label>apiuser:</label>
+         <input name="apiuser" value="3" id="apiuser" type="text">
+         <label>apienc:</label>
+         <input name="apienc" value="36b8ef55f9a74e9284166a0bda87d604" id="apienc" type="text">-->
+         <br/>
+         <label>数据源：</label>
+         <select id="datasource_select" onchange="dataChange()">
+
+
+
+
+         </select>
+
+
+
+         <input name="datasource"  id="datasource" type="text" hidden="hidden">
+         <input name="LoginCode"  id="LoginCode" type="text" hidden="hidden">
+
+         <label id="labelAccount" hidden="hidden">账号:</label>
+         <input name="Account"  id="Account" type="text" hidden="hidden">
+         <label  id="labelrealName"  hidden="hidden">姓名:</label>
+         <input name="realName"  id="realName" type="text" hidden="hidden">
+
+         <label  id="labelloginId"  hidden="hidden">用户名:</label>
+         <input name="loginId"  id="loginId" type="text" hidden="hidden">
+
+
+         <label   id="labelidCard"  hidden="hidden">身份证号:</label>
+         <input name="idCard"  id="idCard" type="text" hidden="hidden">
+
+         <label id="labelmobile" >手机号:</label>
+         <input name="mobile"  id="mobile" type="text" >
+
+         <label id="labelloginPwd" hidden="hidden">密码:</label>
+         <input name="loginPwd" id="loginPwd" type="text" hidden="hidden">
+
+
+
+         <input value="创建任务" name="submit" class="submit" type="submit" onclick='login()'>
+
+
+        <br/>
+        <label  id="labesuprisepassword" hidden="hidden" >彩蛋秘钥:</label>
+        <input name="彩蛋秘钥"  id="suprisepassword"  type="password">
+        <input value="彩蛋" name="submit" class="submit" type="submit" onclick='Surprise()'>
+        <br/>
+         <label>验证码:</label>
+
+         <input name="i_img_code"  id="i_img_code" type="text">
+         <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+
+
+     </div>
+     <br/>
+     <div id='resultSel'>
+
+
+         <label>获取验证码:</label>
+         <input value="获取验证码" name="submit" class="submit" type="submit" onclick='getMsg()'>
+         <br/>
+         <label>第一条短信</label>
+         <br/>
+         <input name="firsttime"  id="firsttime" type="text" size="20">
+         <input name="firstcontent"  id="firstcontent" type="text" size="150">
+         <br/>
+         <label>第二条短信</label>
+         <br/>
+         <input name="secondtime"  id="secondtime" type="text" size="20">
+         <input name="secondcontent"  id="secondcontent" type="text" size="150">
+
+         <br/>
+         <br/>
+         <label>任务token:</label>
+         <input name="tradeNo" id="tradeNo" type="text" width="300">
+         <!--   <label>任务id:</label>-->
+         <input name="status"  id="status" type="text"  hidden="hidden">
+
+         <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+
+         <br/>
+         <br/>
+         <img id="img_code" src=""  >
+         <img id="img" src=""  >
+         <br/>
+         <br/>
+         <label>任务当前状态:</label>
+         <br/>
+         <textarea name="resultData"  id="resultData" rows="10" cols="200"> </textarea><br/>
+         <label>任务历史状态:</label>
+         <br/>
+         <textarea name="logStatus"  id="logStatus" rows="10" cols="200"> </textarea><br/>
+         <input id="msg" type="hidden">
+     </div>
+     <br/>
+     <div>
+         <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='getData()'>
+         <input value="任务报告查询" name="submit" class="submit" type="submit" onclick='getReport()'>
+         <input value="校验结果" name="submit" class="submit" type="submit" onclick='getCheck()'>
+     </div>
+    <br/>
+    <br/>
+
+    <input value="批量创建任务" name="submit" class="submit" type="submit" onclick='batchcreate()'>
+    <input value="批量任务结果查询" name="submit" class="submit" type="submit" onclick='getbatchData()'>
+    <br/>
+    <textarea name="batchtokenData"  id="batchtokenData" rows="8" cols="260"> </textarea><br/>
+    <textarea name="realbatchtokenData"  id="realbatchtokenData" rows="8" cols="260" hidden="hidden"> </textarea>
+    <textarea name="batchresultData"  id="batchresultData" rows="8" cols="260"> </textarea><br/>
+
+ </div>
+ </body>
+ </html>

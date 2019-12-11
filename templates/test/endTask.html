@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>结束任务接口</title>
+    <script type="text/javascript" src="../../static/js/endTask.js"></script>
+</head>
+<body onload="newloadApi()">
+<div class="divClass">
+    <div>
+        <label>目前仅支持支持UAT环境</label>
+        <br/>
+        <label>任务token:</label>
+        <input name="tradeNo" id="tradeNo" type="text" width="300">
+        <!--   <label>任务id:</label>-->
+        <input name="status" id="status" type="text" hidden="hidden">
+
+        <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+        <input value="结束任务" name="submit" class="submit" type="submit" onclick='endTask()'>
+        <br/>
+        <br/>
+        <img id="img_code" src="">
+        <img id="img" src="">
+        <br/>
+        <br/>
+        <label>任务当前状态:</label>
+        <br/>
+        <textarea name="resultData" id="resultData" rows="10" cols="200"> </textarea><br/>
+        <label>任务历史状态:</label>
+        <input value="清空" name="submit" class="submit" type="submit" onclick='clearlog()'>
+        <br/>
+        <textarea name="logStatus"  id="logStatus" rows="10" cols="200"> </textarea><br/>
+        <input id="msg" type="hidden">
+    </div>
+    <br/>
+    <div>
+
+
+    </div>
+    <br/>
+    <br/>
+
+
+
+</div>
+</body>
+</html>

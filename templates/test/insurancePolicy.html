@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>车险</title>
+    <script type="text/javascript" src="../../static/js/insurancePolicy.js"></script>
+</head>
+<body>
+    <div class="divClass">
+        <div>
+            <label>身份证号码:</label>
+            <input name="idCard" id="idCard" type="text">
+            <label>登陆账号:</label>
+            <input name="loginId"  id="loginId" type="text">
+            <label>手机号:</label>
+            <input name="mobile"  id="mobile" type="text" hidden="hidden">
+            <select id="select_login">
+                <option value="1">保单号</option>
+                <option value="2">车牌号</option>
+                <option value="3">车架号</option>
+            </select>
+            <select id="company_select" onchange="checke()">
+                <option value="PICC">中国人民保险</option>
+                <option value="PAIC">中国平安</option>
+                <option value="CPIC">太平洋保险</option>
+                <option value="GPIC">中国人寿财产保险</option>
+                <option value="CCIC">中国大地保险</option>
+                <option value="YGBX">阳光保险</option>
+                <option value="TPIC">中国太平</option>
+                <option value="TAIC">天安财险</option>
+                <option value="YDCX">英大泰和财产保险</option>
+                <option value="YAIC">永安保险</option>
+                <option value="DBIC">都邦保险</option>
+                <option value="ABIC">安邦保险</option>
+                <option value="TPBX">安盛天平</option>
+                <option value="AICS">永诚财产保险</option>
+                <option value="BOCI">中银保险</option>
+                <option value="ZKIC">紫金财产保险</option>
+                <option value="FBCX">富邦财产保险</option>
+                <option value="HABX">华安财产保险</option>
+            </select>
+            <label>渠道:</label>
+            <select id="project_select">
+                <option value="GateWay_UAT13112">征信网关5.0 UAT环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_UAT12593">征信网关5.0 UAT环境(自有新渠道商户) - 8000012593</option>
+                <option value="GateWay_5">征信网关5.0生产环境 - 1010544</option>
+                <option value="GateWay_Private_5">征信网关5.0生产环境(自有新渠道商户) - 1107602</option>
+                <option value="GateWay_Private_32911">征信网关5.0生产环境(自有渠道商户) - 1107601</option>
+                <option value="GateWay_Test_Private_5">征信网关5.0测试环境(自有渠道商户) - 8000013112</option>
+                <option value="GateWay_Test_5">征信网关5.0测试环境 - 8013659631</option>
+                <option value="GateWay_Test_Private_12593">征信网关5.0测试环境(自有新渠道商户) - 8000012593</option>
+            </select>
+            <label>接入方式:</label>
+            <select id="access_mode">
+                <option value="api">api(加密)</option>
+                <option value="web">web(免密)</option>
+            </select>
+            <input value="登录" name="submit" class="submit" type="submit" onclick='login()'>
+            <label>验证码:</label>
+            <img id="img_code" src=""  >
+            <input name="i_img_code"  id="i_img_code" type="text">
+            <input value="获取图片验证码" name="submit" class="submit" type="submit" onclick='getImgCode()'>
+            <input value="验证码提交" name="submit" class="submit" type="submit" onclick='inputMsg()'>
+        </div>
+        <div id='resultSel'>
+            <label>订单号:</label>
+            <input name="tradeNo" id="tradeNo" type="text">
+            <label>任务id:</label>
+            <input name="taskId"  id="taskId" type="text">
+            <input value="任务状态查询" name="submit" class="submit" type="submit" onclick='getImgCode()'><br/>
+            <br/>
+            <textarea name="resultData"  id="resultData" rows="10" cols="200"> </textarea><br/>
+            <input id="msg" type="hidden">
+        </div>
+        <br/>
+        <div>
+            <input value="模拟通知" name="submit" class="submit" type="submit" onclick='notify()'> &nbsp;&nbsp;&nbsp;
+            <input value="任务结果查询" name="submit" class="submit" type="submit" onclick='query()'>
+        </div>
+    </div>
+</body>
+</html>

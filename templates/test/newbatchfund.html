@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>批量公积金测试</title>
+    <script type="text/javascript" src="../../static/js/newbatchfund.js"></script>
+</head>
+<body onload="newloadFund();">
+    <div class="divClass">
+        <div>
+            <label>渠道:</label>
+            <select id="project_select" onchange="carrierChange()">
+                <option value="buildnewgateWayUAT_8013933867">新网关UAT环境_8013933867  </option>
+                <option value="buildnewgateWayUAT_8013933878">新网关UAT环境_8013933878  </option>
+
+
+
+
+                <!-- <option value="buildnewgateWaySC">生产新网关  </option>-->
+                <option value="GateWay_new_SC_1107603">新气象（生产5.0）1107603  </option>
+                <option value="GateWay_new_SC_1107604">新气象（生产5.0）1107604  </option>
+
+                <!-- <option value="buildnewgateWaySCA">生产新网关A环境 </option>-->
+                <option value="GateWay_new_SCA_1107603">新气象（生产5.0）A环境1107603  </option>
+                <option value="GateWay_new_SCA_1107604">新气象（生产5.0）A环境1107604  </option>
+                <!--    <option value="buildnewgateWaySCB">生产新网关B环境  </option>-->
+                <option value="GateWay_new_SCB_1107603">新气象（生产5.0）B环境 1107603  </option>
+                <option value="GateWay_new_SCB_1107604">新气象（生产5.0）B环境 1107604  </option>
+                <option value="buildnewgateWay">测试新网关  </option>
+                <option value="buildnewgateWayB">测试新网关-b环境</option>
+                <option value="testPrivate8013936097">testPrivate8013936097</option>
+                <!--
+                <option value="buildnewgateWayUAT">新网关UAT环境  </option>
+                <option value="buildnewgateWaySC">生产新网关  </option>
+                <option value="buildnewgateWaySCA">生产新网关A环境 </option>
+                <option value="buildnewgateWaySCB">生产新网关B环境  </option>
+                <option value="buildnewgateWay">测试新网关  </option>-->
+            </select>
+
+
+            &nbsp;&nbsp;
+            <!--<label>apiuser:</label>-->
+            <!--<input name="apiuser" value="3" id="apiuser" type="text">-->
+            <!--<label>apienc:</label>-->
+            <!--<input name="apienc" value="36b8ef55f9a74e9284166a0bda87d604" id="apienc" type="text">-->
+
+
+            <select id="subcode">
+                <option value="">     </option>
+                <option value="551"> 安徽 </option>
+                <option value="010"> 北京 </option>
+                <option value="023"> 重庆 </option>
+                <option value="591"> 福建 </option>
+                <option value="931"> 甘肃 </option>
+                <option value="020"> 广东 </option>
+                <option value="771"> 广西 </option>
+                <option value="851"> 贵州 </option>
+                <option value="371"> 河南 </option>
+                <option value="311"> 河北 </option>
+                <option value="731"> 湖南 </option>
+                <option value="027"> 湖北 </option>
+                <option value="898"> 海南 </option>
+                <option value="451"> 黑龙江</option>
+                <option value="025"> 江苏 </option>
+                <option value="791"> 江西 </option>
+                <option value="431"> 吉林 </option>
+                <option value="024"> 辽宁 </option>
+                <option value="951"> 宁夏 </option>
+                <option value="471"> 内蒙古</option>
+                <option value="971"> 青海 </option>
+                <option value="021"> 上海 </option>
+                <option value="531"> 山东 </option>
+                <option value="028"> 四川 </option>
+                <option value="029"> 陕西 </option>
+                <option value="351"> 山西 </option>
+                <option value="022"> 天津 </option>
+                <option value="991"> 新疆 </option>
+                <option value="871"> 云南 </option>
+                <option value="571"> 浙江 </option>
+            </select>
+
+            <input value="批量创建公积金" name="submit" class="submit" type="submit" onclick='login("sql")'>
+            <input value="指定创建部分公积金" name="submit" class="submit" type="submit" onclick='login("part")'>
+
+            <input value="按省份创建公积金" name="submit" class="submit" type="submit" onclick='login("bysub")'>
+            &nbsp;&nbsp;
+            <label>dataNotifyUrl：</label>
+            <input name="dataNotifyUrl" value="" id="dataNotifyUrl" type="text">
+            <label>reportNotifyUrl：</label>
+            <input name="reportNotifyUrl" value="" id="reportNotifyUrl" type="text">
+<!--常州公积金||280127||213000||003230400000-1203||620123198204226119||-->
+            <br/>
+            <br/>
+            <label>公积金名称</label>
+            &nbsp;&nbsp;
+            <input name="fundName"  id="fundName" type="text" onfocus="setfocus(this)" onchange="setinput(this)"size="10">
+            <input name="fundName"  id="fundNameDes" type="text" hidden="hidden">
+            <input name="loginCode"  id="loginCode" type="text" hidden="hidden">
+
+            &nbsp;&nbsp;
+            <select id="fund_select"  onchange="fundChange()"></select>
+            <select id="fundlogin_select"  onchange="fundloginChange()"></select>
+
+            <input value="创建单个公积金" name="submit" class="submit" type="submit" onclick='loginsingle()'>
+
+            <br/>
+           <!-- <label style="color: red">输入参数(格式为：公积金名称|省份编码|地区编码|登陆方式|公积金账号|密码|真实姓名|身份证号|手机号码|公司账户  不同账号之间换行)：</label>-->
+            1、批量创建公积金：批量创建数据库中全部有效（flag=1）的公积金数据
+            <br/>
+            2、指定创建部分公积金：用于指定部分地区创建任务，在数据库autotest_fund_config，将需要创建的地区partflag设置为1
+            <br/>
+            3、按省份批量创建公积金：可在下拉列表中选择省份名称后，创建指定省份的公积金任务
+
+            <br/>
+            <br/>
+            <br/>
+
+         <!-- <textarea name="batchFund"  id="batchFund" rows="5" cols="260"> </textarea><br/>-->
+
+            <!--  <input value="开始测试" name="submit" class="submit" type="submit" onclick='login("default")'>-->
+             &nbsp;&nbsp;  &nbsp;&nbsp;
+
+             <input value="当前批次任务查询" name="submit" class="submit" type="submit" onclick='getAllStatus()'>
+             <div id='resultSel'>
+             <label style="color: red">当前任务订单号:</label>
+             <br/>
+             <textarea name="tradeNo" id="tradeNo" rows="5" cols="260" ></textarea>
+             <br/>
+             <input id="msg" type="hidden">
+                <!-- <input value="任务查询" name="submit" class="submit" type="submit" onclick='getMoreStatus()'>
+                 <br/>
+                 <label style="color: red">任务订单号(多条订单号换行):</label>
+                 <br/>
+                 <textarea name="tradeNo1"  id="tradeNo1" rows="3" cols="180"> </textarea><br/>-->
+                <label style="color: red">任务当前状态:</label>
+                <br/>
+                <textarea name="resultData"  id="resultData" rows="8" cols="260"> </textarea><br/>
+               <!-- <br/>
+                <input value="公积金查询" name="submit" class="submit" type="submit" onclick='queryFund("yd")'>
+                <input value="公积金缴纳查询" name="submit" class="submit" type="submit" onclick='queryFundBills("yd")'>
+                <input value="公积金账号查询" name="submit" class="submit" type="submit" onclick='queryFundUser("yd")'>
+                <input value="公积金贷款查询" name="submit" class="submit" type="submit" onclick='queryFundLoan("yd")'>
+                <input value="公积金还款查询" name="submit" class="submit" type="submit" onclick='queryFundRepay("yd")'>
+                <br/>
+                <textarea name="resultData"  id="reportData" rows="8" cols="180"> </textarea><br/>
+
+                <input value="公积金查询" name="submit" class="submit" type="submit" onclick='queryFund()'><br/>
+                <textarea name="resultData"  id="resultData" rows="5" cols="200"> </textarea><br/>
+                <input value="公积金缴纳查询" name="submit" class="submit" type="submit" onclick='queryFundBills()'><br/>
+                <textarea name="billsData"  id="billsData" rows="5" cols="200"> </textarea><br/>
+                <input value="公积金账号查询" name="submit" class="submit" type="submit" onclick='queryFundUser()'><br/>
+                <textarea name="userData"  id="userData" rows="5" cols="200"> </textarea><br/>
+                <input value="公积金贷款查询" name="submit" class="submit" type="submit" onclick='queryFundLoan()'><br/>
+                <textarea name="loanData"  id="loanData" rows="5" cols="200"> </textarea><br/>
+                <input value="公积金还款查询" name="submit" class="submit" type="submit" onclick='queryFundRepay()'><br/>
+                <textarea name="repayData"  id="repayData" rows="5" cols="200"> </textarea><br/>-->
+        </div>
+        </div>
+    </div>
+</body>
+</html>
